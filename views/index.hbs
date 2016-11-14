@@ -1,8 +1,15 @@
 <h1>Latest Entries</h1>
 
+<a href="/create"> Create New Entry </a> 
+
 
 {{#each entries}}
-<h3>{{title}}</h3>
-<h3>{{content}}</h3>
-<h3>{{date}}</h3>
+<div class="media">{{title}} {{date}}
+  <div class="media-left media-middle">
+
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{content}}</h4>
+  </div>
+</div>
 {{/each}}

@@ -6,5 +6,7 @@ function getEntries() {
 
 
 module.exports = {
-getEntries
+
+  getEntries
+
 }
