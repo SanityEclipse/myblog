@@ -1,6 +1,6 @@
 <h1>Latest Entries</h1>
 
-<a href="/create"> Create New Entry </a> 
+<a href="/create"> Create New Entry </a>
 
 
 {{#each entries}}
@@ -12,4 +12,7 @@
     <h4 class="media-heading">{{content}}</h4>
   </div>
 </div>
+<form method="POST" action="deleteEntry/{{id}}">
+  <button type="submit">Delete</button>
+</form>
 {{/each}}
