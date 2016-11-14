@@ -6,6 +6,7 @@ var queries = require('../db/queries')
 router.get('/', getLandingPage);
 router.get('/create', newEntryPage);
 
+router.post('/createEntry', createEntry);
 
 
 function getLandingPage (req, res, next) {
@@ -17,6 +18,11 @@ function getLandingPage (req, res, next) {
 
 function newEntryPage(req, res, next) {
   res.render('create', {title: 'Blog'});
+}
+
+function createEntry(req, res, next) {
+  queries.createEntry(req.body)
+    .then (res.redirect('/'))
 }
 
 
