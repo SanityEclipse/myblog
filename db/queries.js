@@ -13,13 +13,15 @@ function deleteEntry(id) {
 
 }
 
-function updateEntry(title, content, date, id) {
-  return knex('newEntries').update({
-    title: updatedTitle,
-    content: updatedContent,
-    date: updatedDate
+function updateEntry(id, title, content, date) {
+  return knex('newEntries').where({
+    id : id
   })
-  .where('id', id)
+    .update({
+    title: title,
+    content: content,
+    date: date
+  })
 }
 
 module.exports = {
