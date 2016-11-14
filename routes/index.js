@@ -5,12 +5,11 @@ var queries = require('../db/queries')
 /* GET home page. */
 router.get('/', getLandingPage);
 router.get('/create', newEntryPage);
+router.get('/updateEntry/:id', getSingleEntry)
 
 router.post('/createEntry', createEntry);
 router.post('/deleteEntry/:id', deleteEntry);
-
-router.put('/:id', updateEntry); 
-
+router.post('/updateEntry/:id', updateEntry);
 
 function getLandingPage (req, res, next) {
   queries.getEntries()
@@ -21,6 +20,13 @@ function getLandingPage (req, res, next) {
 
 function newEntryPage(req, res, next) {
   res.render('create', {title: 'Blog'});
+}
+
+function getSingleEntry (req, res, next){
+  queries.getSingleEntry(req.params.id)
+  .then(function(data){
+  res.render('updateEntry', {title: 'Blog', entry: data });
+  })
 }
 
 function createEntry(req, res, next) {
@@ -34,8 +40,10 @@ function deleteEntry(req, res, next) {
 }
 
 function updateEntry(req, res, next) {
-  queries.updateEntry(req.body)
-  .then(res.redirect('/'))
+  queries.updateEntry(req.params.id, req.body.title, req.body.content, req.body.date)
+  .then(function(){
+    res.redirect('/');
+  })
 }
 
-module.exports = router;
+module.exports = router

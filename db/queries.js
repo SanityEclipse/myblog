@@ -4,8 +4,24 @@ function getEntries() {
   return knex('newEntries');
 }
 
+function getSingleEntry(id){
+  return knex('newEntries').where({id: id})
+}
+
 function createEntry(entries) {
   return getEntries().insert(entries, 'id')
+}
+
+function updateEntry(id, title, content, date) {
+  console.log(arguments)
+  return knex('newEntries').where({
+    id : id
+  })
+    .update({
+    title: title,
+    content: content,
+    date: date
+  })
 }
 
 function deleteEntry(id) {
@@ -13,20 +29,14 @@ function deleteEntry(id) {
 
 }
 
-function updateEntry(title, content, date, id) {
-  return knex('newEntries').update({
-    title: updatedTitle,
-    content: updatedContent,
-    date: updatedDate
-  })
-  .where('id', id)
-}
 
 module.exports = {
 
   getEntries,
-  createEntry,
+  getSingleEntry,
   updateEntry,
+  createEntry,
+  getSingleEntry,
   deleteEntry
 
 }

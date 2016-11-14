@@ -4,18 +4,17 @@
 
 
 {{#each entries}}
-<div class="media">{{title}} {{date}}
-  <div class="media-left media-middle">
 
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">{{content}}</h4>
-  </div>
+<div class="media">{{title}} {{date}}
+    <div class="media-body">
+        <h4 class="media-heading">{{content}}</h4>
+    </div>
 </div>
+
 <form method="POST" action="deleteEntry/{{id}}">
-  <button type="submit">Delete</button>
+    <button type="submit">Delete</button>
 </form>
-<form method="PUT" action="updateEntrye/{{id}}">
-  <button type="submit">Update</button>
-</form> 
+
+<a href="updateEntry/{{id}}">Update Entry</a> 
+
 {{/each}}
