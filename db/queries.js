@@ -13,10 +13,20 @@ function deleteEntry(id) {
 
 }
 
+function updateEntry(title, content, date, id) {
+  return knex('newEntries').update({
+    title: updatedTitle,
+    content: updatedContent,
+    date: updatedDate
+  })
+  .where('id', id)
+}
+
 module.exports = {
 
   getEntries,
   createEntry,
+  updateEntry,
   deleteEntry
 
 }

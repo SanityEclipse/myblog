@@ -7,8 +7,9 @@ router.get('/', getLandingPage);
 router.get('/create', newEntryPage);
 
 router.post('/createEntry', createEntry);
-
 router.post('/deleteEntry/:id', deleteEntry);
+
+router.put('/:id', updateEntry); 
 
 
 function getLandingPage (req, res, next) {
@@ -32,5 +33,9 @@ function deleteEntry(req, res, next) {
   .then(res.redirect('/'))
 }
 
+function updateEntry(req, res, next) {
+  queries.updateEntry(req.body)
+  .then(res.redirect('/'))
+}
 
 module.exports = router;
