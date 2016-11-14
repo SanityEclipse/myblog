@@ -8,7 +8,10 @@ router.get('/', getLandingPage);
 
 
 function getLandingPage (req, res, next) {
-  res.render('index', { title: 'Blog' })
+  queries.getEntries()
+  .then (function(data){
+  res.render('index', {title: 'Blog', entries: data});
+  })
 };
 
 module.exports = router;
