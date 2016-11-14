@@ -8,7 +8,7 @@ router.get('/create', newEntryPage);
 
 router.post('/createEntry', createEntry);
 
-// router.delete('/deleteEntry', deleteEntry);
+router.post('/deleteEntry/:id', deleteEntry);
 
 
 function getLandingPage (req, res, next) {
@@ -27,10 +27,10 @@ function createEntry(req, res, next) {
     .then (res.redirect('/'))
 }
 
-// function deleteEntry(req, res, next) {
-//   queries.deleteEntry(req.body)
-//   .then (res.redirect('/'))
-// }
+function deleteEntry(req, res, next) {
+  queries.deleteEntry(req.params.id)
+  .then(res.redirect('/'))
+}
 
 
 module.exports = router;
