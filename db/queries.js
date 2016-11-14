@@ -8,6 +8,9 @@ function createEntry(entries) {
   return getEntries().insert(entries, 'id')
 }
 
+// function deleteEntry() {
+//   return getEntries().where('id', req.params.id).del();
+// }
 
 module.exports = {
 
