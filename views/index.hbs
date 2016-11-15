@@ -1,21 +1,33 @@
 <h1>Latest Entries</h1>
 
-<a href="/create"> Create New Entry </a>
+<!-- <a href="/create"> Create New Entry </a> -->
 
+<a href='/create'><button type="button" class="btn btn-default" aria-label="Left Align" id="createButton">
+  Create New Entry <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+</button></a>
 
 {{#each entries}}
 
-<div>
-<div>
-    <h1>{{title}}</h1>
-    <h3>{{date}}</h3>
-    <h4>{{content}}</h4>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{title}} {{date}}</h3>
+  </div>
+  <div class="panel-body">
+    {{content}}
+  <div class="row-sm-6">
+    <div class="col-md-2">
+      <a href="updateEntry/{{id}}"><button id="updateButton" class="btn btn-default">Update Entry</button></a>
+    </div>
+  </div>
+    <div class="row-sm-6">
+      <div class="col-md-2">
+        <form method="POST" action="deleteEntry/{{id}}">
+          <button type="submit" id="deleteButton" class="btn btn-default">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
-<form method="POST" action="deleteEntry/{{id}}">
-    <button type="submit">Delete</button>
-</form>
-
-<a href="updateEntry/{{id}}">Update Entry</a>
 
 {{/each}}

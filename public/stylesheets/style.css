@@ -3,6 +3,28 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:link:hover {
+  color: grey;
+  text-decoration: none;
+}
+
+#createButton {
+  margin-bottom: 10px;
+}
+
+#deleteButton {
+  margin-top: 5px;
+  color: white;
+  background-color: black;
+}
+
+#updateButton {
+  margin-top: 5px;
+  color: white;
+  background-color: grey;
 }

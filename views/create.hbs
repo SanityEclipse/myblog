@@ -2,9 +2,8 @@
 
 <form action="createEntry" method="POST" id="createForm">
   <input type="text" placeholder="Enter a Title" name='title'></input>
-  <input type="text" placeholder="Date" name='date'></input>
-  <input type="submit" value="Submit Entry"></input>
+  <input type="text" placeholder="Date" name='date'></input></br>
+    <textarea rows="4" cols="50" name="content" form="createForm" style="margin-top:5px"></textarea>
+      <h4> Text input is limited to 1000 characters.</h4>
+  <input type="submit" value="Submit Entry" class="btn btn-default"></input>
 </form>
-
-<textarea rows="4" cols="50" name="content" form="createForm"></textarea>
-<h4> Text input is limited to 1000 characters.</h4>

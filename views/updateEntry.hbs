@@ -4,10 +4,11 @@
 
 <form action="/updateEntry/{{id}}" method="POST" id="updateEntry">
   <input type="text" value="{{this.title}}" name='title'></input>
-  <input type="text" value="{{this.date}}" name='date'></input>
-  <input type="submit" value="Update Entry"></input>
+  <input type="text" value="{{this.date}}" name='date'></input></br>
+    <textarea form="updateEntry" rows="4" cols="50" name="content" style="margin-top:5px">{{this.content}}</textarea>
+      <h4> Text input is limited to 1000 characters.</h4>
+  <input type="submit" value="Update Entry" class="btn btn-default"></input>
 </form>
 
-<textarea form="updateEntry" rows="4" cols="50" name="content">{{this.content}}</textarea>
 
 {{/each}}
