@@ -31,12 +31,16 @@ function getSingleEntry (req, res, next){
 
 function createEntry(req, res, next) {
   queries.createEntry(req.body)
-    .then (res.redirect('/'))
+    .then(function() {
+      res.redirect('/');
+  })
 }
 
 function deleteEntry(req, res, next) {
   queries.deleteEntry(req.params.id)
-  .then(res.redirect('/'))
+  .then(function(){
+    res.redirect('/');
+  })
 }
 
 function updateEntry(req, res, next) {
