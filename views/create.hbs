@@ -3,9 +3,10 @@
 
 <h1>Create New Entry</h1>
 
-<form action="createEntry" method="POST">
+<form action="createEntry" method="POST" id="createForm">
   <input type="text" placeholder="Enter a Title" name='title'></input>
-  <input type="text" placeholder="Content" name='content'></input>
   <input type="text" placeholder="Date" name='date'></input>
   <input type="submit" value="Submit Entry"></input>
 </form>
+
+<textarea rows="4" cols="50" name="content" form="createForm"></textarea>

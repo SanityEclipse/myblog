@@ -5,11 +5,12 @@
 
 {{#each entry}}
 
-<form action="/updateEntry/{{id}}" method="POST">
+<form action="/updateEntry/{{id}}" method="POST" id="updateEntry">
   <input type="text" value="{{this.title}}" name='title'></input>
-  <input type="text" value="{{this.content}}" name='content'></input>
   <input type="text" value="{{this.date}}" name='date'></input>
   <input type="submit" value="Update Entry"></input>
 </form>
+
+<textarea form="updateEntry" rows="4" cols="50" name="content">{{this.content}}</textarea>
 
 {{/each}}
