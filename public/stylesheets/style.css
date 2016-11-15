@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+
+#createButton {
+margin-bottom: 10px; 
+}
+
+#deleteButton {
+margin-top: 5px;
+}
+
+#updateButton {
+  margin-top: 5px;
+  text-decoration: none;
+}
